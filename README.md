@@ -34,7 +34,7 @@ Klucz ten został wydzielony z dostarczonego przez MF certyfikatu
 
 ## 1. Przygotowanie danych uwierzytelniających - pliku XML dla operacji InitUpload
 
-> python wjpk.py **init** jpk_vat/rrrr_mm.xml
+> python wjpk.py **init** rrrr_mm.xml
 
 W pierwszym kroku plik do wysłania jest szyfrowany wygenerowanym losowym kluczem i tworzony jest
 plik uwierzytelniający do podpisania podpisem kwalifikowanym.
@@ -46,13 +46,14 @@ Krok init tworzy następujące pliki
 
 ## 2. Podpisanie pliku uwierzytelniającego podpisem kwalifikowanym
 
-Utworzony plik uwierzytelniający (np. rrrr_mm-initupload.xml) należy podpisać podpisem kwalifikowanym.
-Podpisany plik naleźy wgrać do katalogu. Dalej zakładamy, że plik ten ma dodatkowe rozszerzenie
-.xades (np. rrrr_mm-initupload.xml.xades) ale nazwa moźe być inna w zależności od użytego do podpisu programu.
+Utworzony plik uwierzytelniający (np. rrrr_mm-initupload.xml) należy podpisać podpisem poprzez profil zaufany ePUAP.
+W tym celu należy zalogować sie na [epuap](https://epuap.gov.pl/wps/myportal/aplikacje/skrzynka)
+Wejść do katalogu Robocze oraz wybrać opcję `Dodaj plik z dysku` gdzie należy plik uwierzytelniający wybrać a następnie kliknąc przycisk `Dodaj`
+Po dodaniu należy kliknąc w nazwę tego pliku dodanego a następnie nacisnąc przycisk `Podpisz` i podpisać `Profilem zaufanym`. W następnym kroku należy wybrać `Podpisz profilem zaufanym` i podać kod autoryzacyjny i `autoryzuj i podpisz dokument`. Następnie podpisany dokument należy `Pobierz` i zapisać na dysku. Jeśli nie będzie wyboru miejsca do zapisania najprawdopodobniej zapisze się to na `~/Downloads/rrrr_mm-initupload.xml`. Następnie ten plik należy skopiować do katalogu w którym mamy zainstalowany wjpk.
 
 ## 3. Wysłanie plików
 
-> python wjpk.py **upload** rrrr_mm-initupload.xml.xades
+> python wjpk.py **upload** rrrr_mm-initupload.xml
 
 W tym kroku wysyłamy zaszyfrowane pliki przy pomocy komendy **upload**.
 Jako argument podajemy nazwę podpisanego pliku uwierzytelniającego.
