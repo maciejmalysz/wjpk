@@ -5,7 +5,7 @@
     <EncryptionKey algorithm="RSA" mode="ECB" padding="PKCS#1" encoding="Base64">$key</EncryptionKey>
     <DocumentList>
         <Document>
-            <FormCode systemCode="$kod (1)" schemaVersion="1-0">$kod</FormCode>
+            <FormCode systemCode="$kod (3)" schemaVersion="1-1">$kod</FormCode>
             <FileName>$xml_nazwa</FileName>
             <ContentLength>$xml_len</ContentLength>
             <HashValue algorithm="SHA-256" encoding="Base64">$xml_hash</HashValue>

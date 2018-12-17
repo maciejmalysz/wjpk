@@ -7,7 +7,8 @@ from Crypto import Random
 
 import base64, StringIO, zipfile, json, requests, sys, string, re
     
-MF_URL= 'https://test-e-dokumenty.mf.gov.pl/api/Storage'
+# MF_URL= 'https://test-e-dokumenty.mf.gov.pl/api/Storage' - Test
+MF_URL= 'https://e-dokumenty.mf.gov.pl/api/Storage'
 KEY_SIZE= 32 # AES256
 BS= 16
 
@@ -18,7 +19,7 @@ requests.packages.urllib3.disable_warnings() # Tymczasowo
 def init_upload(jpk_nazwa):
     """
     wydobycie klucza z certyfikatu MF    
-    openssl x509 -inform pem -in cert_mf.pem -pubkey -noout > klucz_mf.pem
+    openssl x509 -inform pem -in 3af5843ae11db6d94edf0ea502b5cd1a.pem.pem -pubkey -noout > klucz_mf_prod.pem
     """
     
     jpk_xml= open(jpk_nazwa, 'rb').read()
@@ -31,7 +32,8 @@ def init_upload(jpk_nazwa):
     key= Random.new().read(KEY_SIZE)
     
     # szyfrowanie klucza szyfrownia algorytmem RSA
-    klucz_mf= RSA.importKey(open('klucz_mf.pem', 'r').read())
+    # klucz_mf= RSA.importKey(open('klucz_mf.pem', 'r').read()) LAB
+    klucz_mf= RSA.importKey(open('klucz_mf_prod.pem', 'r').read()) # PROD
     rsa_cipher= PKCS1_v1_5.new(klucz_mf)
     jpk['key']= base64.b64encode(rsa_cipher.encrypt(key))
          
