@@ -17,7 +17,7 @@ Wysyłka gotowego pliku JPK składa się z następujących etapów
 3. Wysłanie plików
 4. Sprawdzenie statusu / pobranie UPO
 
-Skrypt wjpk.py realizuje, kroki 1, 3, 4. Podpis przygotowanego w kroku 1 pliku uwierzytelniającego/inicjalizującego sesję trzeba wykonać przy pomocy odpowiedniego programu do obsługi podpisu kwalifikowanego.
+Skrypt wjpk.py realizuje, kroki 1, 3, 4. Podpis przygotowanego w kroku 1 pliku uwierzytelniającego/inicjalizującego sesję trzeba wykonać za pomocą ePUAP korzystajać z profilu zaufanego
 
 W przykładach zakładamy, że mamy do wysłania plik **rrrr_mm.xml**
 
