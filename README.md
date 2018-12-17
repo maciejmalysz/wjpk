@@ -13,7 +13,7 @@ W używanym środowisku pythona wymagane są następujące zależności:
 Wysyłka gotowego pliku JPK składa się z następujących etapów
 
 1. Przygotowanie danych uwierzytelniających - pliku XML dla operacji InitUpload
-2. Podpisanie pliku uwierzytelniającego podpisem kwalifikowanym
+2. Podpisanie pliku uwierzytelniającego profilem zaufanym
 3. Wysłanie plików
 4. Sprawdzenie statusu / pobranie UPO
 
