@@ -30,6 +30,7 @@ W katalogu, z którego wysyłamy plik muszą się znajdować wszystkie pliki z p
 
 Klucz ten został wydzielony z dostarczonego przez MF certyfikatu
 > openssl x509 -inform pem -in cert_mf.pem -pubkey -noout > klucz_mf.pem
+
 > openssl x509 -inform pem -in 3af5843ae11db6d94edf0ea502b5cd1a.pem -pubkey -noout > klucz_mf_prod.pem
 
 ## 1. Przygotowanie danych uwierzytelniających - pliku XML dla operacji InitUpload
